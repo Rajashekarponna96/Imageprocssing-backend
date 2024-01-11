@@ -110,6 +110,10 @@ public class UserService {
 		userInfo.setMobile(userInfoRequest.getMobile());
 		userInfo.setPassLength(userInfoRequest.getPassLength());
 		userInfo.setActionStatus(ActionStatus.Created);
+		userInfo.setState(userInfoRequest.getState());
+		userInfo.setCity(userInfoRequest.getCity());
+		userInfo.setOrganization(userInfoRequest.getOrganization());
+		userInfo.setReenterPassword(userInfoRequest.getReenterPassword());
 		if(userInfoRequest.getLoggedUserId()!= null) {
 		Optional<UserInfo> optionalAdminUser = userInfoRepository.findById(userInfoRequest.getLoggedUserId());
 		if (optionalAdminUser.isPresent()) {
@@ -289,6 +293,10 @@ public class UserService {
 		info.setEmail(userInfoRequest.getEmail());
 		info.setMobile(userInfoRequest.getMobile());
 		info.setActionStatus(ActionStatus.Updated);
+		info.setState(userInfoRequest.getState());
+		info.setCity(userInfoRequest.getCity());
+		info.setOrganization(userInfoRequest.getOrganization());
+		info.setReenterPassword(userInfoRequest.getReenterPassword());
 		UserInfo dbUserInfo = remote_UserInfoRepository.findByIdentifier(info.getIdentifier());
 		if (dbUserInfo == null) {
 			info.setSync(false);
