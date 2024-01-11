@@ -202,9 +202,24 @@ public class UserService {
 		
 	}
 
+//	public UserInfoResponse doLogin(UserInfoRequest infoRequest) {
+//
+//		UserInfo userInfo = userInfoRepository.findByUsernameAndPassword(infoRequest.getUsername(),passwordEncrypt.encodePassword(infoRequest.getPassword()));
+//		if (userInfo == null) {
+//			throw CommonException.CreateException(CommonExceptionMessage.INCORRECT_UserNameAndPassword);
+//		}
+//		if (!userInfo.checkWebModule(infoRequest.getFeature())) {
+//			throw CommonException.CreateException(CommonExceptionMessage.PERMISSION_NOTEXISTS);
+//		}
+//		return new UserInfoResponse(userInfo.getId(), userInfo.getUsername(), userInfo.getPassword(),
+//				userInfo.getRole().getName(), userInfo.isActive(),userInfo.getFirstName(),userInfo.getLastName(),userInfo.getEmail(),userInfo.getMobile()
+////				,userInfo.getStoreInfo().getStoreName()
+//				
+//				);
+//	}
 	public UserInfoResponse doLogin(UserInfoRequest infoRequest) {
 
-		UserInfo userInfo = userInfoRepository.findByUsernameAndPassword(infoRequest.getUsername(),passwordEncrypt.encodePassword(infoRequest.getPassword()));
+		UserInfo userInfo = userInfoRepository.findByEmailAndPassword(infoRequest.getEmail(),passwordEncrypt.encodePassword(infoRequest.getPassword()));
 		if (userInfo == null) {
 			throw CommonException.CreateException(CommonExceptionMessage.INCORRECT_UserNameAndPassword);
 		}
@@ -212,10 +227,11 @@ public class UserService {
 			throw CommonException.CreateException(CommonExceptionMessage.PERMISSION_NOTEXISTS);
 		}
 		return new UserInfoResponse(userInfo.getId(), userInfo.getUsername(), userInfo.getPassword(),
-				userInfo.getRole().getName(), userInfo.isActive(),userInfo.getFirstName(),userInfo.getLastName(),userInfo.getEmail(),userInfo.getMobile(),
-				userInfo.getStoreInfo().getStoreName());
+				userInfo.getRole().getName(), userInfo.isActive(),userInfo.getFirstName(),userInfo.getLastName(),userInfo.getEmail(),userInfo.getMobile()
+//				,userInfo.getStoreInfo().getStoreName()
+				
+				);
 	}
-	
 	public UserInfoResponse doLoginkiosk(UserInfoRequest infoRequest) {
 
 		UserInfo userInfo = userInfoRepository.findByPassword(passwordEncrypt.encodePassword(infoRequest.getPassword()));		

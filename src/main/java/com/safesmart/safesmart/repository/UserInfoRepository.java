@@ -16,7 +16,7 @@ public interface UserInfoRepository extends PagingAndSortingRepository<UserInfo,
 
 	UserInfo findByUsername(String username);
 
-	UserInfo findByUsernameAndPassword(String username, String password);
+	UserInfo findByEmailAndPassword(String email, String password);
 
 	List<UserInfo> findByRole_Name(String role);
 
