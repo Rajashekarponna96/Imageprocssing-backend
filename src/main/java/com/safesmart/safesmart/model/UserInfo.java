@@ -51,6 +51,16 @@ public class UserInfo {
 	private String mobile;
 
 	private String email;
+	
+	private String state;
+	
+	private String city;
+	
+	private String Organization;
+	
+	private String reenterPassword;
+	
+	
 
 	private StoreInfo storeInfo;
 	
@@ -280,16 +290,62 @@ public class UserInfo {
 	public void setActionStatus(ActionStatus actionStatus) {
 		this.actionStatus = actionStatus;
 	}
+	
+	
+
+	public String getState() {
+		return state;
+	}
+
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+
+	public String getCity() {
+		return city;
+	}
+
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+
+	public String getOrganization() {
+		return Organization;
+	}
+
+
+	public void setOrganization(String organization) {
+		Organization = organization;
+	}
+
+
+	public String getReenterPassword() {
+		return reenterPassword;
+	}
+
+
+	public void setReenterPassword(String reenterPassword) {
+		this.reenterPassword = reenterPassword;
+	}
+
 
 	@Override
 	public String toString() {
 		return "UserInfo [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role
 				+ ", create_time=" + create_time + ", active=" + active + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", passLength=" + passLength + ", mobile=" + mobile + ", email=" + email + ", storeInfo="
-				+ storeInfo + ", locksInfo=" + locksInfo + ", insertBills=" + insertBills + ", lastLoginDate=" + lastLoginDate + ", sync=" + sync + ", identifier=" + identifier
+				+ lastName + ", passLength=" + passLength + ", mobile=" + mobile + ", email=" + email + ", state="
+				+ state + ", city=" + city + ", Organization=" + Organization + ", reenterPassword=" + reenterPassword
+				+ ", storeInfo=" + storeInfo + ", locksInfo=" + locksInfo + ", insertBills=" + insertBills
+				+ ", lastLoginDate=" + lastLoginDate + ", sync=" + sync + ", identifier=" + identifier
 				+ ", actionStatus=" + actionStatus + "]";
 	}
 
+
+	
 //	public Long getStoreInfoId1() {
 //		return storeInfoId1;
 //	}

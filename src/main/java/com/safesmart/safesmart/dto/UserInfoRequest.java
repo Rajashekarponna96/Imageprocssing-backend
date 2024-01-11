@@ -29,6 +29,15 @@ public class UserInfoRequest {
 	private String mobile;
 	private String passLength;
 	
+    private String state;
+	
+	private String city;
+	
+	private String Organization;
+	
+	private String reenterPassword;
+	
+	
 	public String getPassLength() {
 		return passLength;
 	}
@@ -146,6 +155,39 @@ public class UserInfoRequest {
 
 	public void setLoggedUserId(Long loggedUserId) {
 		this.loggedUserId = loggedUserId;
+	}
+	
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getOrganization() {
+		return Organization;
+	}
+
+	public void setOrganization(String organization) {
+		Organization = organization;
+	}
+
+	public String getReenterPassword() {
+		return reenterPassword;
+	}
+
+	public void setReenterPassword(String reenterPassword) {
+		this.reenterPassword = reenterPassword;
 	}
 
 	public void validateRequiredAttributes() {
